@@ -209,7 +209,7 @@ out1 <- jags.basic(jagsData, inits, wanted, "msom_model_code.jags",
                         n.chains=3, n.iter=1500, n.adapt=400, n.burnin=500, n.thin=2, parallel=TRUE, DIC=FALSE)
 
 # This is a heavily parameterised model, so takes time to run. 
-# To save time, you can load the results (that I have run for you) and prepare species richness map.
+# To save time, you can load the results (that I ran for you already!) and prepare species richness map.
 load("MSOM_out1_results.RData")
 
 # Convert the output to matrix 
