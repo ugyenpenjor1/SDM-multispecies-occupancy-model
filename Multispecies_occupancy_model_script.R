@@ -242,7 +242,7 @@ select.samp <- sort(sample(1:nsamp, 100)) # only taking out 100 for faster run
 nsamp2 <- length(select.samp)
 
 # Get the coefficients and assign them to each pixel 
-# Fine resolution (e.g., 250m x 250 or even 90m by 90m if your study area is small) mapping with take time!
+# Fine resolution (e.g., 250m x 250 or even 90m by 90m if your study area is small) mapping will take time!
 INTERCEPT <- all0[select.samp, grep("^lpsi", nms)]
 BETAFOREST <- all0[select.samp, grep("^betalpsiFore", nms)]
 BETADSET <- all0[select.samp, grep("^betalpsiSet", nms)]
@@ -287,7 +287,7 @@ myCol <- colorRampPalette(c('white', 'mediumpurple3', 'yellow', 'red'))
 ppdm <- rasterFromXYZ(data.frame(x=Bhutan$X1x1_points.POINT_X, y=Bhutan$X1x1_points.POINT_Y, z=pmSR))
 plot(ppdm, col= myCol(100), axes=F, box=F, main='Posterior mean of species richness', legend.shrink=0.35,
      legend.args=list(text="Species richness", side=4, line=-2, font=2))
-# Adding scale, boundary, axes, and north arrow can be performed later with few lines of codes.
+# Adding scale, boundary, axes, and north arrow can be performed later.
 
 # Posterior SD - this accounts for prediction uncertainty
 ppdsd <- rasterFromXYZ(data.frame(x=Bhutan$X1x1_points.POINT_X, y=Bhutan$X1x1_points.POINT_Y, z=sdSR))
